@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react';
+import Holder from './Holder';
 
-export default function LikePost() {
-
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
-
+function LikePost(props) {
   return (
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+      <button onClick={props.handleCounter}>Like Post {props.counter}</button>
     </div>
-  )
+  );
 }
+
+export default Holder(LikePost);
